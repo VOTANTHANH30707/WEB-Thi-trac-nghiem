@@ -1,0 +1,45 @@
+<div class="center main">
+    <p class="text-center h4 mb-5">{{tenmonhoc}}</p>
+    <button class="btn btn-primary mb-3" ng-click="batDauBaiKiemTra()" ng-hide="isStarted">Bắt đầu kiểm tra</button>
+    <p ng-click="ketthuc()" class="text-end text-danger" style="cursor: pointer;" ng-show="isStarted"><b>Kết thúc</b></p>
+    <div class="card text-start" ng-repeat="ch in caccauhoi | limitTo: 1:start" ng-show="isStarted">
+        <div class="card-header">
+            <p> <b>Câu {{ start + $index + 1 }}:</b> {{ ch.Text }} <span class="badge text-bg-warning float-end">Điểm:
+                    {{ch.Marks}}</span></p>
+
+        </div>
+        <div class="card-body">
+            <span class="badge text-bg-primary float-end">{{ formatTime(sogiay)}}</span>
+            <div class="form-check" ng-repeat="pa in ch.Answers">
+
+                <input class="form-check-input" type="radio" ng-model="selectedAnswers[ch.Id]" ng-value="pa.Id"
+                    name="cauhoi_{{ch.Id}}" id="flexRadioDefault1"
+                    ng-click="kiemTraPA(pa.Id, ch.AnswerId, ch.Marks, ch.Id)"
+                    ng-checked="selectedAnswers[ch.Id] == pa.Id">
+                {{pa.Text}}
+
+            </div>
+
+        </div>
+
+        <div class="btn-toolbar mb-3 mt-3 d-flex justify-content-center" role="toolbar"
+            aria-label="Toolbar with button groups">
+            <div class="btn-group me-2" role="group" aria-label="First group">
+                <button type="button" class="btn btn-outline-secondary" ng-disabled="isFirstPage()"
+                    ng-click="first()">Câu
+                    đầu</button>
+                <button type="button" class="btn btn-outline-secondary" ng-disabled="isFirstPage()" ng-click="pre()">Câu
+                    Trước</button>
+                <button type="button" class="btn btn-outline-secondary" ng-disabled="isLastPage()"
+                    ng-click="next()">Tiếp theo</button>
+                <button type="button" class="btn btn-outline-secondary" ng-disabled="isLastPage()" ng-dis
+                    ng-click="last()">Câu
+                    cuối</button>
+            </div>
+        </div>
+        <div class="card-footer text-warning text-end ">
+            <b> MARK: {{diem}}</b>
+        </div>
+    </div>
+
+</div>

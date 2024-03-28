@@ -1,0 +1,11 @@
+
+<div class="row ">
+    <div class="col-md-3 col-sm-6 col-12 mb-3 " ng-repeat="mh in cacmonhoc">
+        <div class="card text-center subject">
+            <div class="card-body">
+                <a href="#!thitranghiem/{{mh.Id}}/{{mh.Name}}"><img ng-src="Image/logos/{{mh.Logo}}" class="me-auto"></a>
+            </div>
+            <div class="card-footer text-body-secondary" ng-bind="mh.Name"></div>
+        </div>
+    </div>
+</div>

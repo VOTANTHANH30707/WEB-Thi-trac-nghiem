@@ -1,0 +1,9 @@
+<form class="centerForm" style="margin-top: 185px;" name="frmquenmk">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email</label>
+        <input required ng-model="email" name="email" ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
+            type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <em class="text-danger" ng-show="frmquenmk.email.$invalid && frmquenmk.email.$dirty">Email không hợp lệ</em>
+    <button ng-click="quenmk()" type="button" class="btn btn-primary float-end">Xác nhận</button>
+</form>

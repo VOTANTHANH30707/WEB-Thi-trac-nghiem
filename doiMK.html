@@ -1,0 +1,46 @@
+
+<form class="centerForm main" ng-show="username!=null" name="frmdp">
+    <div class="row g-3 mb-3">
+        <div class="col">
+            <label for="">Tên đăng nhập</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-person"></i></span>
+                <input value="{{username}}" name="username" disabled type="text" class="form-control" placeholder="Tên đăng nhập" aria-label=""
+                    aria-describedby="addon-wrapping">
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mb-3">
+        <div class="col">
+            <label for="">Mật khẩu cũ</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock"></i></span>
+                <input name="pass_old" ng-model="pass_old" type="password" class="form-control" placeholder="Mật khẩu Cũ" aria-label=""
+                    aria-describedby="addon-wrapping">
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mb-3">
+        <div class="col">
+            <label for="">Mật khẩu mới</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock"></i></span>
+                <input name="pass_new1" ng-model="pass_new1" type="password" class="form-control" placeholder="Mật khẩu mới" aria-label=""
+                    aria-describedby="addon-wrapping">
+            </div>
+        </div>
+    </div>
+    <div class="row g-3 mb-3">
+        <div class="col">
+            <label for="">Nhập lại mật khẩu</label>
+            <div class="input-group flex-nowrap">
+                <span class="input-group-text" id="addon-wrapping"><i class="bi bi-lock"></i></span>
+                <input name="pass_new2" ng-model="pass_new2" type="password" class="form-control" placeholder="Nhập lại mật khẩu mới" aria-label=""
+                    aria-describedby="addon-wrapping">
+            </div>
+        </div>
+    </div>
+    <div class="col-12 pb-5">
+        <button ng-click="doipass()" type="submit" class="btn btn-primary float-end ">Đổi mật khẩu</button>
+    </div>
+</form>

@@ -1,0 +1,90 @@
+<form name="frmdk" class="col-8 m-auto center">
+    <div class="card text-right">
+        <div class="card-header ">
+            <p class="h4">Đăng Ký</p>
+        </div>
+        <div class="card-body">
+            <div class="row g-3 mb-3">
+                <div class="col">
+                    <label class="form-lable mb-2">Tên đăng nhập</label>
+                    <input required ng-model="Student.username" name="username" type="text" class="form-control"
+                        placeholder="Tên đăng nhập" aria-label="Tên đăng nhập" ng-minlength="6"
+                        ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d).{6,}$/">
+                    <em class="text-danger" ng-show="frmdk.username.$invalid && frmdk.username.$dirty">Tên đăng nhập
+                        phải >=6 ký tự có chữ và
+                        sô</em>
+                </div>
+                <div class="col">
+                    <label class="form-lable mb-2">Họ Và Tên</label>
+                    <input required ng-model="Student.fullname" name="fullname" ng-pattern="[a-zA-Z\s]+" type="text"
+                        class="form-control" placeholder="Nhập Họ Và Tên" aria-label="Nhập Họ Và Tên">
+                    <em class="text-danger" ng-show="frmdk.fullname.$invalid  && frmdk.fullname.$dirty">Họ và tên là
+                        chữ</em>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col">
+                    <label class="form-lable mb-2">Email</label>
+                    <div class="input-group flex-nowrap">
+                        <input required ng-model="Student.email" name="email" type="email" class="form-control"
+                            placeholder="@gmail.com" aria-label="Email"
+                            ng-pattern="/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <em class="text-danger" ng-show="frmdk.email.$invalid && frmdk.email.$dirty">Email không hợp lệ</em>
+                </div>
+                <div class="col">
+                    <label class="form-lable mb-2">Mật Khẩu</label>
+                    <div class="input-group flex-nowrap">
+                        <input required ng-model="Student.password" name="password" ng-minlength="8"
+                            ng-pattern="/^(?=.*[a-zA-Z])(?=.*\d).{6,}$/" type="password" class="form-control"
+                            placeholder="Mật Khẩu" aria-label="Mật Khẩu" aria-describedby="addon-wrapping">
+
+                    </div>
+                    <em class="text-danger" ng-show="frmdk.password.$invalid  && frmdk.password.$dirty">Mật khẩu phải
+                        >=8 ký tự có chữ và số</em>
+                </div>
+            </div>
+
+            <div class="row g-3 mb-3">
+                <div class="col">
+                    <label class="form-lable mb-2">Giới tính</label>
+                    <select required ng-model="Student.gender" name="gender" class="form-select">
+                        <option value="true" selected >Nam</option>
+                        <option value="false">Nữ</option>
+                    </select>
+                    <em class="text-danger" ng-show="frmdk.gender.$invalid">Chọn giới tính</em>
+                </div>
+
+                <div class="col">
+                    <label class="form-lable mb-2">Ngày Sinh</label>
+                    <input required ng-model="Student.birthday" name="birthday" type="date" class="form-control" aria-label="">
+                    <em class="text-danger" ng-show="frmdk.birthday.$invalid">Chọn ngày sinh </em>
+                </div>
+               
+            </div>
+            <div class="row g-3 mb-3">
+                <div class="col">
+                    <label class="form-lable mb-2">Học hí</label>
+                    <div class="input-group flex-nowrap">
+                        <input required ng-model="Student.schoolfee" name="schoolfee" type="number" class="form-control"
+                            placeholder="15000000" aria-label="hocphi" required min="0" pattern="[0-9]+"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <em class="text-danger" ng-show="frmdk.schoolfee.$invalid && frmdk.schoolfee.$dirty">Học phí là số</em>
+                </div>
+                <div class="col">
+                    <label class="form-lable mb-2">Điểm</label>
+                    <div class="input-group flex-nowrap">
+                        <input required ng-model="Student.marks" name="marks" required min="0" pattern="[0-9]+" type="number"
+                            class="form-control" placeholder="0" aria-label="diem" required min="0" max="10"
+                            aria-describedby="addon-wrapping">
+                    </div>
+                    <em class="text-danger" ng-show="frmdk.marks.$invalid && frmdk.marks.$dirty">Học phí là số</em>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button ng-click="dangky()" type="button" class="btn btn-success mt-3 float-end">Đăng Ký</button>
+</form>

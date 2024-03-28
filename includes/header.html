@@ -1,0 +1,124 @@
+<div class="row center">
+    <div class="col-2 col-md-2 logo ">
+        <a href="index.html"><img class="card-img-top" src="Image/FPT_Polytechnic.png" alt=""
+                style=" margin-bottom: -32px; height: 55px; width: 180px;"></a>
+    </div>
+</div>
+<nav class="navbar navbar-expand-lg bg-dark " style="margin-top: 35px; padding-bottom: 0;">
+    <div class="float-start">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar"
+            aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="margin-bottom: 12px;"><i
+                    class="bi bi-list text-white fs-1 "></i></span>
+        </button>
+    </div>
+
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="1" id="offcanvasDarkNavbar"
+        aria-labelledby="offcanvasDarkNavbarLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">DANH MỤC</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"
+                aria-label="Close"></button>
+        </div>
+        <div class=" offcanvas-body row" style="float: flex;">
+            <ul class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll aa row">
+                <div class="col-12 nbar">
+                    <li class="nav-item me-3 li" ng-repeat="mh in cacmonhoc | orderBy:Name" ng-if="$index % 5 == 0">
+                        <div class="row">
+                            <div class="col-12" style="margin-bottom: -20px;">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#!thitranghiem/{{cacmonhoc[$index].Id}}//{{cacmonhoc[$index].Name}}">
+                                    <p class="menu__hover" style="color: #FFFF; font-size: 14px;">
+                                        {{cacmonhoc[$index].Name | uppercase}}</p>
+                                </a>
+                            </div>
+                            <div class="col-12" ng-if="$index + 1 < cacmonhoc.length" style="margin-bottom: -20px;">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#!thitranghiem/{{cacmonhoc[$index + 1].Id}}//{{cacmonhoc[$index + 1].Name}}">
+                                    <p class="menu__hover" style="color: #FFFF; font-size: 14px;">
+                                        {{cacmonhoc[$index + 1].Name | uppercase}}</p>
+                                </a>
+                            </div>
+                            <div class="col-12" ng-if="$index + 2 < cacmonhoc.length" style="margin-bottom: -20px;">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#!thitranghiem/{{cacmonhoc[$index + 2].Id}}//{{cacmonhoc[$index + 2].Name}}">
+                                    <p class="menu__hover" style="color: #FFFF; font-size: 14px;">
+                                        {{cacmonhoc[$index + 2].Name | uppercase}}</p>
+                                </a>
+                            </div>
+                            <div class="col-12" ng-if="$index + 3 < cacmonhoc.length" style="margin-bottom: -20px;">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#!thitranghiem/{{cacmonhoc[$index + 3].Id}}//{{cacmonhoc[$index + 3].Name}}">
+                                    <p class="menu__hover" style="color: #FFFF; font-size: 14px;">
+                                        {{cacmonhoc[$index + 3].Name | uppercase}}</p>
+                                </a>
+                            </div>
+                            <div class="col-12" ng-if="$index + 4 < cacmonhoc.length" style="margin-bottom: -20px;">
+                                <a class="nav-link active" aria-current="page"
+                                    href="#!thitranghiem/{{cacmonhoc[$index + 4].Id}}//{{cacmonhoc[$index + 4].Name}}">
+                                    <p class="menu__hover" style="color: #FFFF; font-size: 14px;">
+                                        {{cacmonhoc[$index + 4].Name | uppercase}}</p>
+                                </a>
+                            </div>
+
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+
+        <nav class=" navbar navbar-expand-lg bb">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item ms-3">
+                    <a class="nav-link  mautrang" aria-current="page" href="index.html"> <b><i
+                                class="bi bi-house-door-fill"></i> Trang chủ</a></b>
+                </li>
+                <li class="nav-item ms-3 ">
+                    <a class="nav-link  mautrang " aria-current="page" href="#!gioithieu"><b><i
+                                class="bi bi-info-circle-fill"></i>Giới Thiệu</a></b>
+                </li>
+                <li class="nav-item ms-3 ">
+                    <a class="nav-link  mautrang " aria-current="page" href="#!gopy"><b></b><i
+                            class="bi bi-check-circle-fill"><b></i>Góp ý</a>
+                </li></b>
+                <li class="nav-item ms-3 ">
+                    <a class="nav-link  mautrang " aria-current="page" href="#!hoidap"><b><i
+                                class="bi bi-chat-dots-fill"></i>Hỏi đáp & Liên Hệ</a></b>
+                </li>
+                <li class="nav-item dropdown ms-3  ">
+                    <a class="nav-link   mautrang dropdown-toggle " data-bs-toggle="dropdown" href="#" role="button"
+                        aria-expanded="false"><b>Tài Khoảng</b></a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-item" ng-show="username == null" aria-current="page"
+                                href="#!dangnhap"><b><i class="bi bi-file-lock2-fill"></i>Đăng nhập</a></b>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-item" aria-current="page" href="#!dangky"><b><i
+                                        class="bi bi-file-lock2-fill"></i>Đăng Ký</a></b>
+                        </li>
+                        <li class="nav-item">
+                            <a ng-show="username != null" class="nav-link  dropdown-item" aria-current="page" href="#!doiMK"><b><i
+                                        class="bi bi-file-lock2-fill"></i>Đổi Mật
+                                    Khẩu</a></b>
+                        </li>
+                        <li class="nav-item">
+                            <a ng-show="username != null"  class="nav-link  dropdown-item"
+                                aria-current="page" href="#!thongtintk"><b><i class="bi bi-info-circle-fill"></i>Thông tin tài khoảng</a></b>
+                        </li>
+                        <li class="nav-item">
+                            <a ng-show="username != null" ng-click="dangxuat()" class="nav-link  dropdown-item"
+                                aria-current="page" href="#"><b><i class="bi bi-box-arrow-right"></i>Đăng xuất</a></b>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="nav-item ms-3  ">
+                    <a ng-if="username!=null" class="nav-link user mautrang " aria-current="page"
+                        href="#"><b>{{username}}</b></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</nav>

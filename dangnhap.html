@@ -1,0 +1,33 @@
+<form class="centerForm" style="margin-top: 185px;" name="frmdn">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Tên Đăng Nhập</label>
+        <input required ng-model="u" name="username" ng-keypress="handleKeyPress($event)" type="text"
+            class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <em class="text-danger" ng-show="frmdn.username.$invalid ">Chưa nhập tên đăng nhập</em> <br>
+
+
+
+    <label for="exampleInputPassword1" class="form-label mt-3">Mật Khẩu</label>
+    <div class="input-group flex-nowrap">
+        <input required ng-model="p" name="password" type="{{ showPassword ? 'text' : 'password' }}"
+            ng-keypress="handleKeyPress($event)" class="form-control" id="exampleInputPassword1">
+        <span ng-click="toggleShowPassword()" class="input-group-text" id="addon-wrapping">
+            <i ng-show="showPassword" class="bi bi-eye-fill"></i>
+            <i ng-show="!showPassword" class="bi bi-eye-slash-fill"></i>
+        </span>
+    </div>
+
+    <em class="text-danger" ng-show="frmdn.password.$invalid ">Chưa nhập Mật khẩu</em>
+    <div class="mb-3">
+    </div>
+
+
+
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Nhớ Mật khẩu</label>
+        <label class="float-end" for=""><a href="#!quenmk">Quên mật khẩu</a></label>
+    </div>
+    <button ng-click="dangnhap()" type="button" class="btn btn-primary float-end" ng-click="dn()">Đăng nhập</button>
+</form>
